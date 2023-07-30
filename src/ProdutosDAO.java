@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ProdutosDAO {
@@ -47,8 +49,22 @@ public class ProdutosDAO {
         return listagem;
     }
     
-    
-    
+    public void  venderProduto(String id){
         
-}
+            try {
+                prep = conn.prepareStatement("UPDATE produtos SET status = 'vendido' WHERE id = " + id);
+                prep.executeUpdate();
+            } catch (SQLException ex) {
+               System.out.println("Erro ao conectar: " + ex.getMessage());
+
+            }
+        }
+     public ArrayList<ProdutosDTO> listarvendas(){
+     }
+     }
+    
+    }
+    
+           
+
 
