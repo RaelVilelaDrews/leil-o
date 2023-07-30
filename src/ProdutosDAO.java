@@ -59,6 +59,10 @@ public class ProdutosDAO {
 
             }
         }
+     public ArrayList<ProdutosDTO> listarvendas(){
+     }
+     }
+    
     }
     
            
