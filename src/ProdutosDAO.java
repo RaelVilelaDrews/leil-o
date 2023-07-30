@@ -52,9 +52,11 @@ public class ProdutosDAO {
     public void  venderProduto(String id){
         
             try {
-                prep = conn.prepareStatement("UPDATE produtos SET status = 'vendido' WHERE id = " +id);
+                prep = conn.prepareStatement("UPDATE produtos SET status = 'vendido' WHERE id = " + id);
+                prep.executeUpdate();
             } catch (SQLException ex) {
-                Logger.getLogger(ProdutosDAO.class.getName()).log(Level.SEVERE, null, ex);
+               System.out.println("Erro ao conectar: " + ex.getMessage());
+
             }
         }
     }
